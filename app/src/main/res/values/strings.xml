@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Uvitor</string>
+    <string name="tvloguin">Ingreso de Sesión</string>
+    <string name="tx_config">Configuracion</string>
+    <string name="tx_report">Reportes</string>
+    <string name="tx_profile">Perfil</string>
+    <string name="tx_logout">Cerrar sesión</string>
 </resources>
