@@ -4,6 +4,6 @@
     <item android:title="@string/tx_report" android:icon="@drawable/ic_gear" android:id="@+id/report_menu"/>
     <group android:id="@+id/group_divider">
         <item android:title="@string/tx_config" android:icon="@drawable/ic_gear" android:id="@+id/config_menu"/>
-        <item android:title="@string/tx_logout" android:icon="@drawable/ic_gear" android:id="@+id/logout"/>
+        <item android:title="@string/tx_logout" android:icon="@drawable/ic_gear" android:id="@+id/logout_menu"/>
     </group>
 </menu>
