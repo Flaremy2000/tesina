@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UvMedia">
-        <activity android:name=".config"></activity>
+        <activity android:name=".config" />
         <activity android:name=".reports" />
         <activity android:name=".profile" />
         <activity android:name=".Start_interactive" />
         <activity
             android:name=".SplashImage"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

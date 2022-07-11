@@ -3,15 +3,33 @@ package com.flaremy.uvmedia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import com.github.anastr.speedviewlib.SpeedView
+import com.github.anastr.speedviewlib.Speedometer
+import kotlin.random.Random
 
 class Start_interactive : AppCompatActivity() {
+
+    lateinit var speed:SpeedView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_interactive)
+
+        speed = findViewById(R.id.uv_meter)
+
+        val rangos = mutableListOf(1.0f, 2.0f,3.0f,4.0f,5.0f,6.0f,7.0f,8.0f,9.0f,10.0f,11.0f,12.0f)
+
+        val mainHandler = Handler(Looper.loop()).postDelayed ({
+            speed.speedTo(rangos.randomOrNull()!!, 1000)
+        }, 1000)
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater:MenuInflater = menuInflater
