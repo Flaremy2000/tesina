@@ -24,21 +24,24 @@
         android:text="@string/tvloguin"/>
 
     <EditText
+        android:id="@+id/et_user"
         android:layout_width="284dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="usuario@host.ext"
-        android:textAlignment="center"
-        android:id="@+id/et_user"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textAlignment="center" />
+
     <EditText
+        android:id="@+id/et_pass"
         android:layout_width="284dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:textAlignment="center"
-        android:inputType="textPassword"
         android:hint="***********"
-        android:id="@+id/et_pass"/>
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
