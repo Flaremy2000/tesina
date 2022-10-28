@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+    <style>
+        #floatingchat{
+            position: fixed;
+            right: 5%;
+            bottom: 5%;
+            width: 80px;
+            height: 80px;
+            background: #F3A3E9;
+            border-radius: 45px;
+            box-shadow: 2px 2px;
+            cursor: pointer;
+        }
+        #floatingchat> span{
+            position: fixed;
+            padding-top: 1.6%;
+            padding-left: .9%;
+        }
+        #floatingchat:hover{
+            background: #f3a3e8e5;
+        }
+        #floatingchat:active{
+            box-shadow: inset 2px 2px;
+        }
+
+        #chat-box{
+            position: absolute;
+            /* background: blueviolet; */
+            width: 360px;
+            height: 380px;
+            z-index: 5;
+            border-radius: 22% !important;
+        }
+
+        #chat-head{
+            /* position: relative; */
+            background: rgb(144, 209, 38);
+            width: 100%;
+            height: 20%;
+            border-bottom: 2px solid #1b1b1b;
+            z-index: 8;
+            border-radius: 22% 22% 0 0;
+        }
+
+        #chat-body{
+            /* position: relative; */
+            background: rgb(15, 189, 58);
+            width: 100%;
+            height: 60%;
+            border-bottom: 2px solid #1b1b1b;
+            z-index: 8;
+        }
+        #chat-footer{
+            /* position: relative; */
+            background: rgb(24, 187, 24);
+            width: 100%;
+            height: 15%;
+            z-index: 8;
+            border-radius: 0 0 22% 22%;
+        }
+        #chat-head> *{
+            display: inline-block;
+        }
+        #chat-head> span{
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            /* text-align: end; */
+        }
+        #chat-head> span:hover{
+            color: aqua;
+            cursor: pointer;
+            /* text-align: end; */
+        }
+        #user-img{
+            margin: 5%;
+            width: 15%;
+            height: 45%;
+            border-radius: 70%;
+        }
+        #chat-title{
+            position: relative;
+            margin: 5%;
+            bottom: 25px;
+
+        }
+        #chating-send{
+            /* position: absolute; */
+            /* right: 5%;
+            bottom: 5%; */
+            padding: 2%;
+        }
+        #chating-send>*{
+            display: inline-block;
+        }
+        #btnsend{
+            position: relative;
+            width: 25%;
+            height: 30px;
+            font-size: 10px;
+            font-weight: bold;
+            border: 0;
+            background: wheat;
+            border-radius: 10%;
+            box-shadow: 1px 1px;
+        }
+        #btnsend:hover{
+            cursor: pointer;
+        }
+        #btnsend:active{
+            background: rgba(245, 222, 179, 0.63);
+            box-shadow: inset 2px 2px;
+        }
+        #message{
+            /* position: absolute; */
+            left: 10%;
+            width: 70%;
+            height: 30px;
+            border-radius: 22% 22% 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="floatingchat">
+        <span id="chating">CHAT</span>
+        <span id="closing" hidden>CLOS</span>
+    </div>
+
+
+
+    <!-- Modal de chat -->
+    <div id="chat-box">
+        <div id="chat-head">
+            <img id="user-img" src="https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon.png"><h3 id="chat-title"> USUARIO </h3> <span>X</span>
+        </div>
+        <div id="chat-body"></div>
+        <div id="chat-footer">
+            <form id="chating-send" method="get">
+                <input type="text" name="message" id="message">
+                <input id="btnsend" type="button" value="ENVIAR">
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(()=>{
+
+            $("#floatingchat").on("click", ()=>{
+                if(!$("#chating").attr("hidden")){
+                    $("#closing").removeAttr("hidden");
+                    $("#chating").attr("hidden", true);
+                }else{
+                    $("#chating").removeAttr("hidden");
+                    $("#closing").attr("hidden", true);
+                }
+            });
+
+
+        });
+    </script>
+</body>
+</html>
